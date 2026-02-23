@@ -1,0 +1,10 @@
+name = "leanum"
+version = "0.1.0"
+defaultTargets = ["leanum"]
+
+[[lean_lib]]
+name = "Leanum"
+
+[[lean_exe]]
+name = "leanum"
+root = "Main"
