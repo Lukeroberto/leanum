@@ -1,3 +1,4 @@
 -- This module serves as the root of the `Leanum` library.
 -- Import modules here that should be built as part of the library.
 import Leanum.Basic
+import Leanum.NDArray

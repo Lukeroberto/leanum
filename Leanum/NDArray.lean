@@ -10,6 +10,10 @@ instance : ToString (Matrix m n) where
       toString row
     String.intercalate "\n" rowStrings
 
+
+-- Array Creation 
+------------------------------------------------------
+
 def fill (m n : Nat) (val : Float) : Matrix m n := {
   data := Array.replicate (m * n) val,
   data_size := by simp
@@ -27,24 +31,16 @@ def eye (n : Nat) : Matrix n n :=
     data_size := by simp [data]
   }
 
-def testMata : Matrix 2 3 := { 
-  data := #[1.1, 1.2, 1.3, 2.1, 2.2, 2.3] 
-  data_size := by rfl
-}
+-- UFuncs
+------------------------------------------------------
 
-def testMatb : Matrix 2 3 := { 
-  data := #[2.0, 3.0, 4.0, 5.0, 1.0, 2.0] 
-  data_size := by rfl
-}
-
-def testMatc : Matrix 2 2 := { 
-  data := #[1.0, 0.0, 1.0, 0.0] 
-  data_size := by rfl
-}
-
-#eval testMata
-#eval testMatb
-#eval testMatc
-#eval eye 4
-
+instance : Add (Matrix m n) where
+  add a b := 
+    let newData := Array.zipWith (. + .) a.data b.data
+    { data := newData,
+      data_size := by
+        have h1 := a.data_size
+        have h2 := b.data_size
+        simp [newData, h1, h2]
+    }
 
