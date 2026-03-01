@@ -7,21 +7,21 @@ This package includes:
 
 - [x] Matrix dependent type
 - [ ] NDarray object
-- [ ] Universal functions (element-wise operations)
+- [x] Universal functions (element-wise operations)
     - [x] sin
     - [x] cos 
     - [x] log
     - [x] exp
-- [ ] Array creation routines
-    - [ ] arange
+- [x] Array creation routines
     - [x] zeros 
     - [x] ones
     - [x] eye
+    - [x] fill
 - [ ] linear algebra routines
-    - [ ] dot
-    - [ ] matmul 
+    - [x] dot
+    - [x] inner 
     - [ ] eigen
 - [ ] array manipulation
     - [ ] reshape
     - [ ] stack 
-    - [ ] split
+    - [ ] transpose
