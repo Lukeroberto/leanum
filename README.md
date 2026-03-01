@@ -7,7 +7,11 @@ This package includes:
 
 - [x] Matrix dependent type
 - [ ] NDarray object
-- [ ] Universal functions (arithmetic, trigonometric, logical)
+- [ ] Universal functions (element-wise operations)
+    - [x] sin
+    - [x] cos 
+    - [x] log
+    - [x] exp
 - [ ] Array creation routines
     - [ ] arange
     - [x] zeros 

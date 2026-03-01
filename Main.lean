@@ -1,7 +1,7 @@
 import Leanum
 
 def testMata : Matrix 2 3 := { 
-  data := #[1.1, 1.2, 1.3, 2.1, 2.3, 2.4] 
+  data := #[1.1, 1.2, 1.3, 2.1, 2.3, 3] 
   data_size := by rfl
 }
 
@@ -19,4 +19,6 @@ def testMatc : Matrix 2 2 := {
 #eval testMata + testMatb 
 #eval testMatc
 #eval eye 5
+#eval sin_mat testMata
+#eval exp_mat testMata
 

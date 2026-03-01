@@ -44,3 +44,19 @@ instance : Add (Matrix m n) where
         simp [newData, h1, h2]
     }
 
+
+def apply_ufunc (f : Float -> Float) (mat : Matrix m n) : Matrix m n := 
+
+  let mapped_data := mat.data.map f
+  {
+    data := mapped_data
+    data_size := by 
+      simp [mapped_data, Array.size_map, mat.data_size]
+  }
+
+
+def sin_mat (mat : Matrix m n) : Matrix m n := apply_ufunc Float.sin mat
+def cos_mat (mat : Matrix m n) : Matrix m n := apply_ufunc Float.cos mat
+def exp_mat (mat : Matrix m n) : Matrix m n := apply_ufunc Float.exp mat
+def log_mat (mat : Matrix m n) : Matrix m n := apply_ufunc Float.log mat
+
